@@ -13,8 +13,18 @@
 
   <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
-    <%= f.collection_select(:breed_id, Breed.all, :id, :name) %>
+    <%= f.text_field :name %><br>
+    <%= f.label :breed %><br>
+    <%= f.collection_select(:breed_id, Breed.all, :id, :name) %><br>
+    <%= f.label :quality %><br>
+    <%= radio_button_tag("pet[quality]", "Poor") %>
+      <%= label_tag(:quality_poor, "Poor") %><br>
+    <%= radio_button_tag("pet[quality]", "Common") %>
+      <%= label_tag(:quality_common, "Common") %><br>
+    <%= radio_button_tag("pet[quality]", "Uncommon") %>
+      <%= label_tag(:quality_uncommon, "Uncommon") %><br>
+    <%= radio_button_tag("pet[quality]", "Rare") %>
+      <%= label_tag(:quality_rare, "Rare") %><br>
   </div>
   <div class="actions">
     <%= f.submit %>
