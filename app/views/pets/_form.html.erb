@@ -13,7 +13,8 @@
 
   <div class="field">
     <%= f.label :name %><br>
-    <%= f.text_field :name %><br>
+    <%= f.text_field :name, :required =>true %><br>
+    <p id="pet_error" class="bg-danger">This pet already exists</p>
     <%= f.label :breed %><br>
     <%= f.collection_select(:breed_id, Breed.all, :id, :name) %><br>
     <%= f.label :quality %><br>
